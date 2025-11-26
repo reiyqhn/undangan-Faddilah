@@ -31,6 +31,8 @@
             line-height: 1.6;
             background-color: var(--color-green-pastel);
             color: var(--color-text-dark);
+            /* Tambahan: Mencegah scroll horizontal di HP */
+            overflow-x: hidden; 
         }
 
         .container {
@@ -201,13 +203,38 @@
         }
 
         .btn-rsvp:hover {
-            background-color: #C6AF6B; /* Warna hover emas */
+            background-color: #C6AF6B;
         }
 
         .footer-note {
             margin-top: 30px;
             font-size: 0.9em;
             color: #777;
+        }
+
+        /* === MEDIA QUERIES UNTUK TAMPILAN HP KECIL (FIX POTONGAN) === */
+        @media (max-width: 480px) {
+            
+            /* Mengurangi ukuran font Nama di Cover agar tidak melebihi batas HP */
+            .cover-section h2 {
+                font-size: 1.8em; 
+            }
+
+            /* Mengurangi ukuran font Judul */
+            .cover-section h1 {
+                font-size: 1.2em; 
+            }
+            
+            /* Mengurangi ukuran sapaan */
+            .greeting span {
+                font-size: 1.4em; 
+            }
+            
+            /* Mengurangi padding kanan agar rata kanan tidak terlalu mepet di HP kecil */
+            .cover-section .container {
+                padding-right: 5%; 
+                padding-left: 5%;
+            }
         }
     </style>
 </head>
@@ -242,7 +269,7 @@
                 <div id="countdown" class="timer-display"></div>
             </div>
 
-            <a href="https://maps.app.goo.gl/H3g1naPdqfQ9Z8gd9?g_st=aw" target="_blank" class="btn-maps">
+            <a href="https://maps.app.goo.gl/WestlakeResortPlaceholder" target="_blank" class="btn-maps">
                 Lihat Lokasi di Google Maps
             </a>
         </div>
